@@ -1,0 +1,48 @@
+<h2>Listing cats</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Maxfund</th>
+      <th>Breed</th>
+      <th>Description</th>
+      <th>Img url</th>
+      <th>Age</th>
+      <th>Color</th>
+      <th>Is current</th>
+      <th>Sex</th>
+      <th>Location</th>
+      <th>Url</th>
+      <th>Intake date</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for cat <- @cats do %>
+    <tr>
+      <td><%= cat.name %></td>
+      <td><%= cat.maxfund_id %></td>
+      <td><%= cat.breed %></td>
+      <td><%= cat.description %></td>
+      <td><%= cat.img_url %></td>
+      <td><%= cat.age %></td>
+      <td><%= cat.color %></td>
+      <td><%= cat.is_current %></td>
+      <td><%= cat.sex %></td>
+      <td><%= cat.location %></td>
+      <td><%= cat.url %></td>
+      <td><%= cat.intake_date %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: cat_path(@conn, :show, cat), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: cat_path(@conn, :edit, cat), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: cat_path(@conn, :delete, cat), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New cat", to: cat_path(@conn, :new) %>

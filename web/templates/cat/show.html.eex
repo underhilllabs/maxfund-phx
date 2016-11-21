@@ -1,0 +1,68 @@
+<h2>Show cat</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @cat.name %>
+  </li>
+
+  <li>
+    <strong>Maxfund:</strong>
+    <%= @cat.maxfund_id %>
+  </li>
+
+  <li>
+    <strong>Breed:</strong>
+    <%= @cat.breed %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @cat.description %>
+  </li>
+
+  <li>
+    <strong>Img url:</strong>
+    <%= @cat.img_url %>
+  </li>
+
+  <li>
+    <strong>Age:</strong>
+    <%= @cat.age %>
+  </li>
+
+  <li>
+    <strong>Color:</strong>
+    <%= @cat.color %>
+  </li>
+
+  <li>
+    <strong>Is current:</strong>
+    <%= @cat.is_current %>
+  </li>
+
+  <li>
+    <strong>Sex:</strong>
+    <%= @cat.sex %>
+  </li>
+
+  <li>
+    <strong>Location:</strong>
+    <%= @cat.location %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @cat.url %>
+  </li>
+
+  <li>
+    <strong>Intake date:</strong>
+    <%= @cat.intake_date %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: cat_path(@conn, :edit, @cat) %>
+<%= link "Back", to: cat_path(@conn, :index) %>
