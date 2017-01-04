@@ -1,1 +1,9 @@
 /* This file is for your main application css. */
+
+div.cat-details {
+  padding: 1.5em !important;
+  background: #dedede;
+}
+div.container {
+  xmax-width: 1370px;
+}
