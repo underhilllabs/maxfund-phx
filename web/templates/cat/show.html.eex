@@ -1,68 +1,61 @@
-<h2>Show cat</h2>
+<h2>Meet <%= @cat.name %></h2>
 
+<img src="/<%= Maxfund.Avatar.url({@cat.avatar, @cat}) %>"/>
 <ul>
-
   <li>
-    <strong>Name:</strong>
-    <%= @cat.name %>
-  </li>
-
-  <li>
-    <strong>Maxfund:</strong>
+    <strong>Maxfund ID:</strong>
     <%= @cat.maxfund_id %>
   </li>
 
+<%= if @cat.breed do %>
   <li>
     <strong>Breed:</strong>
     <%= @cat.breed %>
   </li>
+<% end %>
 
-  <li>
-    <strong>Description:</strong>
-    <%= @cat.description %>
-  </li>
 
-  <li>
-    <strong>Img url:</strong>
-    <%= @cat.img_url %>
-  </li>
-
+<%= if @cat.age do %>
   <li>
     <strong>Age:</strong>
     <%= @cat.age %>
   </li>
+<% end %>
 
+<%= if @cat.color do %>
   <li>
     <strong>Color:</strong>
     <%= @cat.color %>
   </li>
+<% end %>
 
-  <li>
-    <strong>Is current:</strong>
-    <%= @cat.is_current %>
-  </li>
-
+<%= if @cat.sex do %>
   <li>
     <strong>Sex:</strong>
     <%= @cat.sex %>
   </li>
+<% end %>
 
+<%= if @cat.location do %>
   <li>
     <strong>Location:</strong>
     <%= @cat.location %>
   </li>
+<% end %>
 
-  <li>
-    <strong>Url:</strong>
-    <%= @cat.url %>
-  </li>
-
+<%= if @cat.intake_date do %>
   <li>
     <strong>Intake date:</strong>
     <%= @cat.intake_date %>
   </li>
+<% end %>
 
 </ul>
+
+<%= if @cat.description do %>
+    <h3>Description</h3>
+    <p><%= @cat.description %></p>
+<% end %>
 
 <%= link "Edit", to: cat_path(@conn, :edit, @cat) %>
 <%= link "Back", to: cat_path(@conn, :index) %>

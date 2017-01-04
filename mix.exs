@@ -19,7 +19,7 @@ defmodule Maxfund.Mixfile do
   def application do
     [mod: {Maxfund, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :comeonin, :phoenix_ecto, :mariaex]]
+                    :exfavicon, :httpotion, :floki, :timex, :comeonin, :phoenix_ecto, :mariaex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -34,12 +34,17 @@ defmodule Maxfund.Mixfile do
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0"},
      {:mariaex, "~> 0.8.0", override: true},
-     #{:mariaex, ">= 0.7.3"},
      {:phoenix_html, "~> 2.6"},
+     {:exfavicon, "~> 0.3"},
+     {:httpotion, "~> 3.0.2"},
      {:guardian, "~> 0.13.0"},
      {:comeonin, "~> 2.6"},
+     {:arc_ecto, "~> 0.3.1"},
+     {:arc, "0.2.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
+     {:timex, "~> 3.0"},
+     {:floki, "~> 0.11.0"},
      {:cowboy, "~> 1.0"}]
   end
 
