@@ -11,11 +11,15 @@ config :maxfund,
 
 # Configures the endpoint
 config :maxfund, Maxfund.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "maxfund.denvertech.org"],
   secret_key_base: "Fl9XvAlxnGjhHyCF6CGz10rnKp+XA7jY/0xyZzVD2uOKzWkb/6OfQHw5OdFl1sAS",
   render_errors: [view: Maxfund.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Maxfund.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
+# Configure file attachment storage
+config :arc,
+  storage: Arc.Storage.Local # or Arc.Storage.S3
 
 # Configure guardian
 config :guardian, Guardian,
@@ -25,7 +29,7 @@ config :guardian, Guardian,
   ttl: { 30, :days },
   verify_issuer: true, # optional
   secret_key: "GFirMsmChzWa36UMMLrOtnquifGm+yF4eHpjL7Po2IoIN8jOTaGKD+dIknVFYZ8h",
-  serializer: Bookmarks.GuardianSerializer
+  serializer: Maxfund.GuardianSerializer
 
 
 # Configures Elixir's Logger
