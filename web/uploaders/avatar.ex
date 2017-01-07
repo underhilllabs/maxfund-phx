@@ -9,7 +9,7 @@ defmodule Maxfund.Avatar do
   #@versions [:original]
 
   # To add a thumbnail version:
-  @versions [:original, :thumb]
+  @versions [:original, :profile, :thumb]
 
   # Whitelist file extensions:
   def validate({file, _}) do
@@ -18,7 +18,11 @@ defmodule Maxfund.Avatar do
 
   # Define a thumbnail transformation:
   def transform(:thumb, _) do
-    {:convert, "-strip -thumbnail 250x250^ -gravity center -extent 250x250 -format png"}
+    {:convert, "-strip -thumbnail 300x300^ -gravity center -extent 300x300 -format png"}
+  end
+  # Define profile picture
+  def transform(:profile, _) do
+    {:convert, "-strip -thumbnail 500x500^ -gravity center -extent 500x500 -format png"}
   end
 
   # Override the persisted filenames:

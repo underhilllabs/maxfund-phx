@@ -1,6 +1,6 @@
 <h2>Meet <%= @cat.name %></h2>
 
-<img src="/<%= Maxfund.Avatar.url({@cat.avatar, @cat}) %>"/>
+<img src="/<%= Maxfund.Avatar.url({@cat.avatar, @cat}, :profile) %>"/>
 <ul>
   <li>
     <strong>Maxfund ID:</strong>
