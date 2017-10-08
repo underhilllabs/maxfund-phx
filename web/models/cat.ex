@@ -3,25 +3,27 @@ defmodule Maxfund.Cat do
   use Arc.Ecto.Model
 
   schema "cats" do
-    field :name, :string
-    field :maxfund_id, :string
+    field :age, :string
+    field :avatar, Maxfund.Avatar.Type
     field :breed, :string
+    field :color, :string
     field :description, :string
     field :img_url, :string
-    field :age, :string
-    field :color, :string
-    field :is_current, :boolean, default: false
-    field :sex, :string
-    field :location, :string
-    field :url, :string
     field :intake_date, :string
-    field :avatar, Maxfund.Avatar.Type
+    field :is_current, :boolean, default: false
+    field :location, :string
+    field :maxfund_id, :string
+    field :name, :string
+    field :sex, :string
+    field :cat_size, :string
+    field :url, :string
 
     timestamps()
   end
 
   @required_fields ~w(name maxfund_id )
-  @optional_fields ~w(breed description img_url age color is_current sex location url intake_date)
+  @optional_fields ~w(breed description img_url age color is_current sex cat_size location url intake_date)
+
   @required_file_fields ~w()
   @optional_file_fields ~w(avatar)
 

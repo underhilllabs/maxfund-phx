@@ -25,6 +25,10 @@ defmodule Maxfund.Avatar do
     {:convert, "-strip -thumbnail 500x500^ -gravity center -extent 500x500 -format png"}
   end
 
+  # To retain the original filename, but prefix the version and user id:
+	def filename(version, {file, scope}) do
+		"#{scope.id}_#{version}_#{file.file_name}"
+	end
   # Override the persisted filenames:
   # def filename(version, _) do
   #   version
