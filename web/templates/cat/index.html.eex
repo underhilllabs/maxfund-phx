@@ -5,7 +5,7 @@
 <%= for cat <- @cats do %>
     <div class="cat-details col-sm-4">
       <h2><a href="/cats/<%= cat.id %>"><%= cat.name %></a></h2>
-      <img src="/<%= Maxfund.Avatar.url({cat.avatar, cat}, :thumb) %>"/>
+      <img src="<%= Maxfund.Avatar.url({cat.avatar, cat}, :thumb) %>"/>
       <div>Breed: <%= cat.breed %></div>
       <div>Age: <%= cat.age %></div>
       <div>Color: <%= cat.color %></div>
