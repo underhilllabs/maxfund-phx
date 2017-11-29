@@ -24,8 +24,8 @@ defmodule Maxfund.Cat do
   @required_fields ~w(name maxfund_id breed color)
   @all_fields ~w(name maxfund_id breed description img_url age color is_current sex cat_size location url intake_date)
 
-  @required_file_fields ~w(avatar)
-  @optional_file_fields ~w(avatar)
+  #@required_file_fields ~w()
+  #@optional_file_fields ~w(avatar)
 
   @doc """
   Builds a changeset based on the `struct` and `params`.
@@ -34,6 +34,8 @@ defmodule Maxfund.Cat do
     struct
     |> cast(params, @all_fields)
     |> validate_required([:name, :maxfund_id])
-    |> cast_attachments(params, [:avatar])
+    #|> cast_attachments(params, [:avatar])
+    |> cast_attachments(params, [:avatar], allow_paths: true)
+
   end
 end

@@ -27,7 +27,9 @@ defmodule Maxfund.Avatar do
 
   # To retain the original filename, but prefix the version and user id:
 	def filename(version, {file, scope}) do
-		"#{scope.id}_#{version}_#{file.file_name}"
+		"#{version}_#{file.file_name}"
+		#"#{scope.id}_#{version}_#{file.file_name}"
+		#"#{version}_#{file.file_name}"
 	end
   # Override the persisted filenames:
   # def filename(version, _) do
