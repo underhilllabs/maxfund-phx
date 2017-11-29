@@ -1,6 +1,6 @@
 defmodule Maxfund.Cat do
   use Maxfund.Web, :model
-  use Arc.Ecto.Model
+  use Arc.Ecto.Schema
 
   schema "cats" do
     field :age, :string
@@ -21,10 +21,10 @@ defmodule Maxfund.Cat do
     timestamps()
   end
 
-  @required_fields ~w(name maxfund_id )
-  @optional_fields ~w(breed description img_url age color is_current sex cat_size location url intake_date)
+  @required_fields ~w(name maxfund_id breed color)
+  @all_fields ~w(name maxfund_id breed description img_url age color is_current sex cat_size location url intake_date)
 
-  @required_file_fields ~w()
+  @required_file_fields ~w(avatar)
   @optional_file_fields ~w(avatar)
 
   @doc """
@@ -32,8 +32,8 @@ defmodule Maxfund.Cat do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @all_fields)
     |> validate_required([:name, :maxfund_id])
-    |> cast_attachments(params, @required_file_fields, @optional_file_fields)
+    |> cast_attachments(params, [:avatar])
   end
 end
