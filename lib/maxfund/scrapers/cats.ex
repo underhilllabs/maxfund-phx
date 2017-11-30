@@ -1,4 +1,4 @@
-defmodule Maxfund.CatDetail do
+defmodule Maxfund.Scrapers.Cats do
   alias Maxfund.Repo
   alias Maxfund.Avatar
 
